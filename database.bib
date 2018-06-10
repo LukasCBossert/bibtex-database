@@ -1,0 +1,42 @@
+ @Person{caesar,
+  date          = {-0100/-0044},
+  comment       = {tyran},
+  description   = {rebel},
+  locationbirth = {Rome},
+  locationdeath = {Rome},
+  name          = {Iulius Caesar, Caius},
+  shortname     = {Caesar},
+  works         = {bello:gallico},
+}
+
+@Person{cicero,
+  date          = {-0106/-0043},
+  comment       = {great author},
+  description   = {Statesman, rhetor, author},
+  locationbirth = {Arpinum},
+  locationdeath = {Formiae},
+  name          = {Tullius Cicero, Marcus},
+  shortname     = {Cicero},
+  related         = {de:re:publica,de:amicitia},
+  relatedtype= {works}
+}
+
+@Work{de:re:publica,
+  title  = {De re publica},
+  date   = {-0054/-0051},
+  crossref = {cicero},
+}
+
+@Work{de:amicitia,
+  crossref = {cicero},
+  title  = {Laelius de amicitia},
+  date   = {-0044},
+}
+
+@Work{bello:gallico,
+  crossref = {caesar},
+  title  = {Bello Gallico},
+  date   = {-0058/-0051},
+}
+
+@Comment{jabref-meta: databaseType:biblatex;}

@@ -1,0 +1,56 @@
+\documentclass{scrartcl}
+\usepackage[
+  datamodel=database,
+  backend=biber,
+ style=ext-authoryear,
+  ]{biblatex}
+\addbibresource{database.bib}
+
+% use for names
+\newcommand\getname[2]{%
+\citename{#1}{#2}%
+}
+
+%use for any field
+\newcommand\getfield[2]{%
+ \citefield{#1}{#2}%
+}
+
+% use for lists
+\newcommand\getlist[2]{%
+ \citelist{#1}{#2}%
+}
+ % \DeclareBibliographyAlias{work}{Work}
+ % \DeclareBibliographyAlias{person}{Person}
+ % \DeclareFieldAlias[Work]{author}{name}
+ % \DeclareFieldAlias[Person]{author}{name}
+ % \DeclareDataInheritance{Person}{Work}{% source entry type / destination entry type
+ %     \inherit{author}{name}% field we want to use
+ %      % \inherit{name}{author}% field we want to use
+ %     % \noinherit{entrysubtype}% fields we don't want to use
+ % }
+ 
+
+\begin{document} 
+\getname{caesar}{name} was born in 
+\getfield{caesar}{locationbirth}.
+He lived \getfield{caesar}{date} and died in
+\getfield{caesar}{locationdeath}.
+
+Our friend \getname{cicero}{name} lived longer (\getfield{cicero}{date}) and he can be described as: 
+\getfield{cicero}{description}.
+
+
+% if this works it would be awesome!
+\getname{cicero}{name} published many important works: \getfield{cicero}{works}.
+\citename{caesar}{name} however only one big shot: 
+\getfield{bello:gallico}{title} 
+written in 
+\getfield{bello:gallico}{date}.
+
+
+\getname{bello:gallico}{name}%does work
+
+\getname{bello:gallico}{author}%does not work
+
+\end{document}

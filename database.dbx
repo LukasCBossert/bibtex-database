@@ -1,0 +1,11 @@
+\DeclareDatamodelEntrytypes{Person}
+\DeclareDatamodelFields[type=list, datatype=name] {name}
+\DeclareDatamodelFields[type=list, datatype=name] {shortname}
+\DeclareDatamodelFields[type=field, datatype=literal] {comment,description,locationbirth,locationdeath,works,date,crossref}
+\DeclareDatamodelEntryfields[Person]{date,comment,description,locationbirth,locationdeath,name,shortname,works,crossref,author,related,relatedtype}
+
+
+\DeclareDatamodelEntrytypes{Works}
+\DeclareDatamodelEntryfields[Works]{author,title,date,crossref,name,shortname}
+
+
